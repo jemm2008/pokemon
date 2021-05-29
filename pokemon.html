@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--   CARGA DE ESTILOS CSS DE BOOTSTRAP   -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!--   COMANDOS DE CSS PROPIOS   -->
+    <style>
+    /*
+    */
+    </style>
+    <title>ACTIVIDAD DE AJAX WITH JQUERY</title>
+    <!--   CARGA DE LIBRERIA JQUERY   -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
+    <!--   MI CÓDIGO JQUERY VA ADENTRO DE LA FUNCIÓN DOCUMENT READY EN EL HEAD   -->
+    <script>
+        $(document).ready(function(){
+
+            let max = 109 - 18;
+
+            $("button.peq").click(function () { 
+                $("#fila").html(""); 
+                for (let i = 1 ; i < max ; i+=3 ) {
+                $("#fila").append(`<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${i}.png" 
+                class="border border-danger m-1" alt="pokemon ico ${i}">`);    
+                }
+            });
+
+            $("button.med").click(function () { 
+                $("#fila").html("");
+                for (let i = 2 ; i < max ; i+=3 ) {
+                $("#fila").append(`<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${i}.png" 
+                class="border border-danger m-1" alt="pokemon ico ${i}">`);    
+                }
+            });
+
+            $("button.gde").click(function () { 
+                $("#fila").html("");
+                for (let i = 3 ; i < max ; i+=3 ) {
+                $("#fila").append(`<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${i}.png" 
+                class="border border-danger m-1" alt="pokemon ico ${i}">`);    
+                }
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row pt-5">
+            <div class="col-4 mt-5">
+                <h1 class="mb-3">Muestra Pokemones según tu elección.</h1>
+                <button class="peq btn btn-primary">pequeños</button>
+                <button class="med btn btn-primary mx-2">medianos</button>
+                <button class="gde btn btn-primary">grandes</button>
+            </div>
+            <div id="fila" class="col-8 mt-2">                
+            </div>                
+        </div>
+    </div>
+    <!-- CARGA DE SCRIPT BOOTSTRAP ( DEBE SER JUSTO ANTES DEL FIN DEL </BODY> ) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous">
+    </script>
+</body>
+</html>
